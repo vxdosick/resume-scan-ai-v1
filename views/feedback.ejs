@@ -1,0 +1,48 @@
+<%- include('partials/header', {title: "Feedback"}) %>
+<main>
+  <section class="rating blue__place margin__bottom">
+    <h1 class="title--text">Resume Analysis</h1>
+    <h2 class="title--text">Rating: <%= rating %> / 10</h2>
+  </section>
+  <section class="strengths margin__bottom">
+    <div class="strengths__container">
+      <h2 class="subtitle--text">Strengths</h2>
+      <% if (strengths.length > 0) { %>
+      <ul class="strengths__list">
+        <% strengths.forEach((item, index) => { %>
+        <li class="normal--text">
+          <img class="small--img" src="/img/plus.svg" alt="+" /> <%= index + 1
+          %>. <%= item %>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No strengths available.</p>
+      <% } %>
+    </div>
+  </section>
+  <section class="weaknesses margin__bottom">
+    <div class="weaknesses__container">
+      <h2 class="subtitle--text">Weaknesses</h2>
+      <% if (weaknesses.length > 0) { %>
+      <ul class="weaknesses__list">
+        <% weaknesses.forEach((item, index) => { %>
+        <li class="normal--text">
+          <img class="small--img" src="/img/minus.svg" alt="-" /> <%= index + 1
+          %>. <%= item %>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No weaknesses available.</p>
+      <% } %>
+    </div>
+  </section>
+  <section class="summary blue__place">
+    <div class="summary__container">
+      <h2 class="title--text">Summary</h2>
+      <p class="normal--text"><%= summary %></p>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

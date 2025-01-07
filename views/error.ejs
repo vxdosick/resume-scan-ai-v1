@@ -1,0 +1,16 @@
+<%- include('partials/header', {title: "Error"}) %>
+<main>
+  <section class="error">
+    <div class="blue__place error__container">
+      <h1 class="title--text">Oops, something went wrong</h1>
+      <p class="normal--text"><%= text %></p>
+      <% if (!text) {%>
+        <p class="normal--text">Something went wrong, please try again.</p>
+      <% } else { %>
+        <p class="normal--text"><%= text %></p>
+        <% } %>
+    </div>
+    <a href="/" class="error__home button--general">Home</a>
+  </section>
+</main>
+<%- include('partials/footer') %>

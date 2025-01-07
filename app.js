@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const promptRoutes = require('./routes/promptRoutes');
 const errorRoutes = require('./routes/errorRoutes');
+const ppRoutes = require('./routes/ppRoutes')
 const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use('/send-prompt', promptRoutes);
 app.use('/error', errorRoutes);
+app.use('/privacy-policy', ppRoutes);
 
 app.get('/', (req, res) => {
     res.render('index', {title: "ResumeScanAi"});
